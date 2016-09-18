@@ -14,7 +14,7 @@
 // Options
 
 $iota-push      : true;
-$iota-push--res : false !default;
+$iota-push--res : true !default;
 
 
 
@@ -23,7 +23,7 @@ $iota-push--res : false !default;
 
   @for $i from 1 through ($column-size - 1) {
 
-    .#{$iota-utility-namespace}push--#{$i}\/#{$column-size} {
+    .#{$iota-utility-namespace}push-#{$i}\/#{$column-size} {
       margin-left: ((100 / $column-size) * $i) * 1% !important;
     }
 
@@ -36,7 +36,7 @@ $iota-push--res : false !default;
 
 // Responsive Push Utilities
 
-@if ($iota-utilities-push--res == true) {
+@if ($iota-push--res == true) {
 
   @each $name, $size in $iota-breakpoint-sizes {
 
@@ -46,7 +46,7 @@ $iota-push--res : false !default;
 
         @for $i from 1 through ($column-size - 1) {
 
-          .#{$iota-utility-namespace}push--#{$i}\/#{$column-size}\@#{$name} {
+          .#{$iota-utility-namespace}push-#{$i}\/#{$column-size}\@#{$name} {
             margin-left: ((100 / $column-size) * $i) * 1% !important;
           }
 
