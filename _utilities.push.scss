@@ -14,7 +14,8 @@
 // Options
 
 $iota-push      : true;
-$iota-push--res : true !default;
+$iota-push-namespace  : push !default;
+$iota-push--res       : false !default;
 
 
 
@@ -23,7 +24,7 @@ $iota-push--res : true !default;
 
   @for $i from 1 through ($column-size - 1) {
 
-    .#{$iota-utility-namespace}push-#{$i}\/#{$column-size} {
+    .#{$iota-utility-namespace}#{$iota-push-namespace}-#{$i}\/#{$column-size} {
       margin-left: ((100 / $column-size) * $i) * 1% !important;
     }
 
@@ -46,7 +47,7 @@ $iota-push--res : true !default;
 
         @for $i from 1 through ($column-size - 1) {
 
-          .#{$iota-utility-namespace}push-#{$i}\/#{$column-size}\@#{$name} {
+          .#{$iota-utility-namespace}#{$iota-push-namespace}-#{$i}\/#{$column-size}\@#{$name} {
             margin-left: ((100 / $column-size) * $i) * 1% !important;
           }
 
