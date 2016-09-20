@@ -20,7 +20,7 @@ npm install --save iotacss-push
 ### Options ###
 
 ```
-$iota-push-namespace  : !default;
+$iota-push-namespace  : push !default;
 $iota-push--res       : false !default;
 ```
 
