@@ -6,22 +6,20 @@ The push utility is responsive for handling grid's before offset.
 ### Installation ###
 
 ```
-npm install --save iotacss-push
+npm install --save iotacss-utils-push
 ```
-
-
-### Dependencies ###
-
-* [Settings.Default](https://github.com/iotacss/settings.default)
-* [Settings.Column](https://github.com/iotacss/settings.column)
-* [Settings.Breakpoint](https://github.com/iotacss/settings.breakpoint)
 
 
 ### Options ###
 
-```
-$iota-push-namespace  : 'push-' !default;
-$iota-push--res       : false !default;
+```sass
+$iota-utils-push-namespace    : 'push-' !default;
+$iota-utils-push-delimiter    : $iota-global-delimiter !default;
+
+$iota-utils-push-columns      : $iota-global-columns !default;
+
+$iota-utils-push-res          : false !default;
+$iota-utils-push-breakpoints  : $iota-global-breakpoints !default;
 ```
 
 

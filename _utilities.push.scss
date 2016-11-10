@@ -1,31 +1,38 @@
-// Push Utilities
-
-
-
-
-// Dependencies
-//   Settings.Default
-//   Settings.Column
-//   Settings.Breakpoint
+// Push Utility
 
 
 
 
 // Options
 
-$iota-push            : true;
-$iota-push-namespace  : 'push-' !default;
-$iota-push--res       : false !default;
+$iota-utils-push              : true;
+
+$iota-utils-push-namespace    : 'push-' !default;
+$iota-utils-push-delimiter    : $iota-global-delimiter !default;
+
+$iota-utils-push-columns      : $iota-global-columns !default;
+
+$iota-utils-push-res          : false !default;
+$iota-utils-push-breakpoints  : $iota-global-breakpoints !default;
 
 
 
 
-@each $column-size in $iota-column-sizes {
+// Helper Local Variables
+
+$iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-namespace;
+
+
+
+
+// Push Utilities
+
+@each $column-size in $iota-utils-push-columns {
 
   @for $i from 1 through ($column-size - 1) {
 
-    .#{$iota-utility-namespace}#{$iota-push-namespace}#{$i}\/#{$column-size} {
-      margin-left: ((100 / $column-size) * $i) * 1% !important;
+    .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size} {
+      margin-#{_iota-direction('left')}: ((100 / $column-size) * $i) * 1% !important;
     }
 
   }
@@ -35,20 +42,20 @@ $iota-push--res       : false !default;
 
 
 
-// Responsive Push Utilities
+// Push Responsive Utilities
 
-@if ($iota-push--res == true) {
+@if ($iota-utils-push-res == true) {
 
-  @each $name, $size in $iota-breakpoint-sizes {
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-push-breakpoints {
 
-    @media #{$size} {
+    @media #{$breakpoint-size} {
 
-      @each $column-size in $iota-column-sizes {
+      @each $column-size in $iota-utils-push-columns {
 
         @for $i from 1 through ($column-size - 1) {
 
-          .#{$iota-utility-namespace}#{$iota-push-namespace}#{$i}\/#{$column-size}\@#{$name} {
-            margin-left: ((100 / $column-size) * $i) * 1% !important;
+          .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size + $iota-global-breakpoint-separator + $breakpoint-name} {
+            margin-#{_iota-direction('left')}: ((100 / $column-size) * $i) * 1% !important;
           }
 
         }

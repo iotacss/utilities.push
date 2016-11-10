@@ -1,6 +1,6 @@
 {
-  "name": "iotacss-push",
-  "version": "0.1.5",
+  "name": "iotacss-utils-push",
+  "version": "1.0.0",
   "description": "Push utility for iotaCSS",
   "main": "_utilities.push.scss",
   "repository": {
@@ -10,13 +10,9 @@
   "keywords": [
     "iotacss",
     "css",
+    "sass",
     "bem",
     "oocss"
   ],
-  "dependencies": {
-    "iotacss-default": "0.1.0",
-    "iotacss-breakpoint": "0.1.0",
-    "iotacss-column": "0.1.0"
-  },
   "author": "Dimitris Psaropoulos <info@harby.me>"
 }
