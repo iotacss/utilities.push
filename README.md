@@ -1,6 +1,6 @@
 # Push Utility #
 
-The push utility is responsive for handling grid's before offset.
+The push utility is responsible for handling grid's before offset.
 
 
 ### Installation ###
