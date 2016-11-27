@@ -30,9 +30,10 @@ $iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-n
 @each $column-size in $iota-utils-push-columns {
 
   @for $i from 1 through ($column-size - 1) {
+    $margin-size: ((100 / $column-size) * $i) * 1%;
 
     .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size} {
-      margin-#{_iota-direction('left')}: ((100 / $column-size) * $i) * 1% !important;
+      @include _iota-directional-property('margin', null, null null null $margin-size, true);
     }
 
   }
@@ -53,9 +54,10 @@ $iota-utils-push-var-push: $iota-global-utilities-namespace + $iota-utils-push-n
       @each $column-size in $iota-utils-push-columns {
 
         @for $i from 1 through ($column-size - 1) {
+          $margin-size: ((100 / $column-size) * $i) * 1%;
 
           .#{$iota-utils-push-var-push + $i + $iota-utils-push-delimiter + $column-size + $iota-global-breakpoint-separator + $breakpoint-name} {
-            margin-#{_iota-direction('left')}: ((100 / $column-size) * $i) * 1% !important;
+            @include _iota-directional-property('margin', null, null null null $margin-size, true);
           }
 
         }
